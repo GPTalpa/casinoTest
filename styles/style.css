@@ -1,0 +1,40 @@
+@import url(header.css);
+@import url(main.css);
+
+body {
+  background-color: #00192b;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  color: #ffffff;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  margin-bottom: 35px;
+}
+
+h4 {
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 40px;
+  line-height: 130%;
+  letter-spacing: 0%;
+  margin-bottom: 15px;
+}
+
+.active_text {
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffd700;
+}
+
+.main_selector_point.active {
+  background: #295374;
+  border: 1px solid #b5bfc7;
+}

@@ -1,0 +1,625 @@
+:root {
+  --rating-size: 20px; /* размер сердечка — подстрой под дизайн */
+  --rating-gap: 6px; /* расстояние между сердечками */
+  --rating-empty: #574052; /* цвет пустого сердца */
+  --rating-fill: #f64747; /* цвет заполненного */
+}
+
+main {
+  padding: 60px 42px;
+  max-width: 1440px;
+  margin: 0 auto;
+  gap: 70px;
+}
+
+main section {
+  margin-bottom: 90px;
+}
+
+.main_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.main_selector_point {
+  display: flex;
+  align-items: center;
+  background-color: #10324c;
+  border: 1px solid #57626c;
+  padding: 12px 20px;
+  border-radius: 12px;
+  max-width: 325px;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.main_selector_point img {
+  margin-right: 15px;
+}
+
+.main_selector_point_dropdown_content {
+  display: none;
+}
+
+.main_selector_point_non_clickable {
+  flex-direction: column;
+}
+
+.main_selector_point_non_clickable:hover .main_selector_point_dropdown_content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.main_selector_point_dropdown_content_active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.main_selector_point_dropdown_content_active p {
+  margin-bottom: 10px;
+}
+.main_selector_point_non_clickable:hover
+  .main_selector_point_dropdown_content
+  p {
+  margin-bottom: 10px;
+}
+
+.main_content {
+  width: 100%;
+}
+
+.main_content_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #10324c;
+  border: 1px solid #57626c;
+  padding: 15px;
+  border-radius: 17px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.main_content_item_title {
+  display: flex;
+  align-items: center;
+}
+
+.main_content_item_title img {
+  margin-right: 20px;
+}
+
+.main_content_item_bonuses {
+  padding: 12px;
+  border-radius: 12px;
+  background: #2f5776;
+  font-size: 16px;
+  min-width: 340px;
+}
+
+/* контейнер для рейтинга */
+.rating {
+  --count: 5;
+  display: inline-block;
+  position: relative;
+  height: var(--rating-size);
+  line-height: 0;
+  user-select: none;
+  margin-right: 5px;
+}
+
+/* базовый (серый) и слой заполнения (цветной) */
+.rating__base,
+.rating__fill {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* серый слой — в потоке */
+.rating__base {
+  color: var(--rating-empty);
+}
+
+/* заполнение — накладывается поверх, ширина задаётся динамически */
+.rating__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--rating-fill);
+  pointer-events: none;
+}
+
+/* сам контейнер для одного сердца */
+.heart {
+  width: var(--rating-size);
+  height: var(--rating-size);
+  display: inline-block;
+  flex: 0 0 var(--rating-size);
+}
+
+/* SVG внутри спана занимает весь размер и окрашивается через currentColor */
+.heart svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.rateWrapper {
+  display: flex;
+}
+
+.rateWrapper span {
+  display: flex;
+  align-items: baseline;
+}
+
+.rateWrapper span p {
+  margin-right: 2px;
+}
+
+.rate_text {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.rate_text_separator {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.rate_text_max {
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.casino_name {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.main_content_item_buttons {
+  width: 133px;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  width: 100%;
+  border-radius: 10px;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  text-align: center;
+}
+
+.btnReview {
+  margin-bottom: 10px;
+  background: #00192b;
+  color: #ffffff;
+}
+
+.btnPN {
+  background: #ffc700;
+  color: #280f23;
+}
+
+.main_selector_point_dropdown_content_point.active {
+  color: #ffd700;
+}
+
+.reslQuestions {
+  background: #08263c;
+  border: 1px solid #57626c;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.reslQuestions p {
+  font-weight: 400;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.howToChoose_items_wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.howToChoose_title {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+h2.howToChoose_title {
+  margin-bottom: 10px;
+}
+
+p.howToChoose_title {
+  margin-bottom: 50px;
+}
+
+.howToChoose_items_block {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.howToChoose_items_column {
+  display: grid;
+  gap: 16px;
+  align-items: stretch;
+  align-content: stretch;
+  justify-content: space-evenly;
+}
+
+.howToChoose_item {
+  background: #041d30;
+  border: 1px solid #57626c;
+  border-radius: 17px;
+  padding: 20px;
+  display: block;
+  /* чтобы тексты не растягивали карточку слишком высоко */
+  overflow: hidden;
+}
+
+.howToChoose_item h3 {
+  font-size: 26px;
+  line-height: 130%;
+  font-weight: 700;
+}
+
+.howToChoose_item span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.howToChoose_item img {
+  margin-right: 15px;
+}
+
+.howToChoose_item p {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.desc {
+  font-weight: 400;
+}
+
+.doubts {
+  background: #295374;
+  border: 1px solid var(--stroke, #57626c);
+  border-radius: 17px;
+  padding: 20px;
+  gap: 20px;
+  max-width: 950px;
+  margin: 0 auto 90px auto;
+}
+
+.doubts p,
+.doubts li {
+  margin-bottom: 15px;
+}
+
+.doubts_checkBlock {
+  padding-left: 1.5rem;
+}
+
+.doubts_checkBlock li {
+  list-style-image: url("../img/icons/check.svg");
+}
+
+.rate_verify {
+  text-align: center;
+}
+
+.rate_verify h2,
+.rate_verify p {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.rate_verify p {
+  margin: 10px auto 40px auto;
+}
+
+.rate_verify_container {
+  display: flex;
+  gap: 20px;
+}
+
+.rate_verify_item {
+  background: #295374;
+  border: 1px solid #b5bfc7;
+  border-radius: 17px;
+  padding: 20px;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rate_verify_item p {
+  margin: 0;
+}
+
+.description_casino {
+  display: flex;
+  flex-direction: column;
+  background: #08263c;
+  border: 1px solid var(--stroke, #57626c);
+  border-radius: 20px;
+  padding: 30px;
+  gap: 20px;
+}
+
+.description_casino h2 {
+  margin-bottom: 0;
+}
+
+.description_casino div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.description_casino_dots ul,
+.description_casino_dots li {
+  list-style: disc;
+}
+
+.description_casino ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 1rem;
+}
+
+.description_casino_dots ul li::marker {
+  font-size: 0.6em; /* уменьшаем размер маркера относительно текста */
+}
+
+.description_casino_dots ul,
+.description_casino_dots li {
+  list-style: disc;
+}
+.description_casino_checks li {
+  list-style-image: url("../img/icons/check.svg");
+}
+
+.description_casino_checks ul {
+  padding-left: 1.5rem;
+}
+
+.deposit {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.deposit h3 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.deposit_title,
+.deposit_desc,
+.deposit_footer {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.deposit_container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.deposit_item {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 17px;
+  background: #295374;
+  border: 1px solid #57626c;
+  align-items: flex-start;
+}
+
+.faq {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq h2 {
+  text-align: center;
+}
+
+.faq_container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.faq_item {
+  background: #10324c;
+  border: 1px solid #57626c;
+  padding: 20px 40px;
+  border-radius: 17px;
+}
+
+/* убираем стандартный треугольник */
+.faq_item_title {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+  padding-right: 32px; /* место под иконку */
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+/* сама иконка */
+.faq_item_title::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='11' viewBox='0 0 18 11' fill='none'%3E%3Cpath d='M9.19678 11L0.397405 0.5L17.9962 0.500002L9.19678 11Z' fill='white'/%3E%3C/svg%3E")
+    no-repeat center/contain;
+  transform: translateY(-50%);
+  transition: transform 0.3s, background-image 0.3s;
+}
+
+.faq_item[open] {
+  background: linear-gradient(90deg, #00223b 1.44%, #0d6eb9 100%);
+}
+
+/* когда details открыт — меняем картинку */
+.faq_item[open] .faq_item_title::after {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxOCcgaGVpZ2h0PScxMScgdmlld0JveD0nMCAwIDE4IDExJyBmaWxsPSdub25lJz48cGF0aCBkPSdNOC44MjUzMSAwTDE3LjYzNjggMTAuNUwwLjAxMzc4MjUgMTAuNUw4LjgyNTMxIDBaJyBmaWxsPScjRkZENzAwJy8+PC9zdmc+");
+}
+
+.faq_item[open] .faq_item_title {
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.footer_1 {
+  background: #113047;
+  display: flex;
+  gap: 28px;
+  padding: 20px 42px;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.footer_2 {
+  background: #011320;
+  padding: 40px;
+}
+
+.footer_2_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer_logo img {
+  margin-bottom: 30px;
+}
+
+.footer_logo p {
+  max-width: 406px;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 400;
+  color: #405b6f;
+}
+
+.active_text_footer {
+  color: #ffd700;
+}
+
+.footer_2_quickLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer_2_quickLinks p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer_2_quickLinks ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer_2_quickLinks li {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.footer_2_signUp {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer_2_signUp p:first-child {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffd700;
+}
+
+.footer_2_signUp_promo {
+  display: flex;
+  gap: 30px;
+}
+
+.footer_2_signUp_promo div {
+  display: flex;
+  gap: 8px;
+}
+
+.footer_2_signUp_email {
+  display: flex;
+  gap: 10px;
+}
+
+.footer_2_signUp_email input {
+  border: 1px solid #8899a5;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: transparent;
+  width: 60%;
+}
+
+.footer_2_signUp_email button {
+  padding: 12px 20px;
+  background: #ffd700;
+  border-radius: 12px;
+  color: #00192b;
+  width: 30%;
+  font-weight: 600;
+}
+
+.separator {
+  display: block;
+  height: 1px;
+  width: 90%;
+  margin: 0 auto;
+  background: #343b42;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.footer_2_partners {
+  display: flex;
+  gap: 152px;
+  align-items: center;
+  justify-content: center;
+}

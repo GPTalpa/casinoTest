@@ -1,0 +1,130 @@
+.header_1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 42px;
+  background: #193347;
+}
+
+nav {
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0%;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+nav a {
+  text-decoration: none;
+  display: block;
+  transition: 0.3s linear;
+}
+.topmenu > li {
+  float: left;
+  position: relative;
+}
+.topmenu > li:first-child {
+  border-left: 0;
+}
+.topmenu > li > a {
+  padding: 0px 10px;
+  text-transform: uppercase;
+  color: #fefdfd;
+  letter-spacing: 2px;
+}
+.topmenu > li > a.active,
+.submenu a:hover {
+  color: #ffd700;
+}
+.topmenu .fa,
+.submenu .fa {
+  margin-left: 5px;
+  color: inherit;
+}
+.submenu {
+  position: absolute;
+  z-index: 5;
+  min-width: 200px;
+  background: #06253d;
+  border-radius: 12px;
+  border: 1px solid #35434e;
+  visibility: hidden;
+  opacity: 0;
+  transform-origin: 0% 0%;
+  transform: rotateX(-90deg);
+  transition: 0.3s linear;
+  padding: 10px 8px;
+  text-transform: uppercase;
+}
+.submenu li {
+  position: relative;
+}
+.submenu li a {
+  color: #ffffff;
+  padding: 10px 20px;
+  font-size: 13px;
+}
+.submenu .submenu {
+  position: absolute;
+  left: 100%;
+  top: -1px;
+  transition: 0.3s linear;
+}
+nav li:hover > .submenu {
+  transform: rotateX(0deg);
+  visibility: visible;
+  opacity: 1;
+}
+
+.header_gift {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #00223b 1.44%, #0d6eb9 100%);
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  box-shadow: 0px 0px 15px 0px #ffc700d9;
+  cursor: pointer;
+}
+
+.header_gift_img {
+  margin-right: 5px;
+}
+
+.header_2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+  background-color: #00192b;
+  background-image: url("../img/header/header_img.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+}
+
+.header-breadcrumbs {
+  font-weight: 500;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+.header-breadcrumbs span {
+  margin: 0 5px;
+}
+
+.header_2 p {
+  font-size: 16px;
+  max-width: 706px;
+}
