@@ -412,4 +412,17 @@ document.addEventListener("DOMContentLoaded", () => {
       mainTitle.innerHTML = MAINTITLE[event.currentTarget.dataset.value];
     });
   });
+
+  const gift = document.querySelector(".header_gift");
+  const cross = document.querySelector(".cross");
+  const popUp = document.querySelector(".popUp");
+  gift.addEventListener("click", () => {
+    popUp.classList.toggle("show");
+  });
+
+  cross.addEventListener("click", (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    popUp.classList.toggle("show");
+  });
 });

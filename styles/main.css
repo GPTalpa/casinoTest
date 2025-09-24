@@ -189,7 +189,7 @@ main section {
 }
 
 .main_content_item_buttons {
-  width: 140px;
+  width: 160px;
   display: flex;
   flex-direction: column;
 }
