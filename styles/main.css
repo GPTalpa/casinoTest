@@ -91,6 +91,7 @@ main section {
 .main_content_item_title {
   display: flex;
   align-items: center;
+  min-width: 35%;
 }
 
 .main_content_item_title img {
